@@ -9,7 +9,8 @@ public class UserRegistrationMain {
 //		user.LastnameValidator();
 //		user.EmailValidator();
 //		user.PhoneNumberValidator();
-		user.PasswordValidatorRule1();
-		user.PasswordValidatorRule2();
+//		user.PasswordValidatorRule1();
+//		user.PasswordValidatorRule2();
+		user.PasswordValidatorRule3();
 	}
 }
