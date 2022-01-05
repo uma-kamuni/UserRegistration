@@ -6,7 +6,8 @@ public class UserRegistration {
 	private static final String NamePattern = "^[A-Z]{1}[a-z]{2,}$"; // regex pattern is fixed and final (static final)
 	private static final String EmailPattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
 	private static final String PhonenumberPattern = "^\\+?([0-9]{2})\\)?([0-9]{10})$";
-	private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";
+	private static final String PasswordPatternRule1 ="^[A-Za-z]{8}$";
+	private static final String PasswordPatternRule2 ="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -53,15 +54,27 @@ public class UserRegistration {
 			PhoneNumberValidator();
 		}
 	}
-	public void PasswordValidator() {
+	public void PasswordValidatorRule1() {
 		System.out.println("Enter the password:");
 		String input = scanner.next();
-		if (input.matches(PasswordPattern)) {
+		if (input.matches(PasswordPatternRule1)) {
 			System.out.println("password sucessfully entered");
 		}
 		else {
 			System.out.println("**Invalid password**try again**");
-			PasswordValidator();
+			PasswordValidatorRule1();
+		}
+	}
+	
+	public void PasswordValidatorRule2() {
+		System.out.println("Enter the password:");
+		String input = scanner.next();
+		if (input.matches(PasswordPatternRule2)) {
+			System.out.println("password sucessfully entered");
+		}
+		else {
+			System.out.println("**Invalid password**try again**");
+			PasswordValidatorRule2();
 		}
 	}
 }
