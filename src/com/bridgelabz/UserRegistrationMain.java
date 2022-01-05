@@ -9,5 +9,6 @@ public class UserRegistrationMain {
 		user.LastnameValidator();
 		user.EmailValidator();
 		user.PhoneNumberValidator();
+		user.PasswordValidator();
 	}
 }
