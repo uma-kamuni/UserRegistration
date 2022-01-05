@@ -6,5 +6,6 @@ public static void main(String[] args) {
     System.out.println("Welcome to user registration");
 	UserRegistration user = new UserRegistration();
 	user.FirstnameValidator();
+	user.LastnameValidator();
 }
 }

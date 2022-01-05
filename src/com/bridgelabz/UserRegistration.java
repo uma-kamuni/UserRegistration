@@ -3,7 +3,7 @@ package com.bridgelabz;
 import java.util.Scanner;
 
 public class UserRegistration {
-	private static final String NamePattern = "^[A-Z]{1}[a-z]{2,}$"; //pattern is fixed and final (static final)
+	private static final String NamePattern = "^[A-Z]{1}[a-z]{2,}$"; //regex pattern is fixed and final (static final)
 	Scanner scanner = new Scanner(System.in);
 
 	public void FirstnameValidator() {
@@ -14,6 +14,17 @@ public class UserRegistration {
 		} else {
 			System.out.println("**Invalid First name**try again**");
 			FirstnameValidator();
+		}
+	}
+	
+	public void LastnameValidator() {
+		System.out.println("Enter Last Name");
+		String input = scanner.next();
+		if (input.matches(NamePattern)) {   //if entered name is matching with pattern then true
+			System.out.println("Last name sucessfully entered");
+		} else {
+			System.out.println("**Invalid Last name**try again**");
+			LastnameValidator();
 		}
 	}
 }
