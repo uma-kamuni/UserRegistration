@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class UserRegistration {
 	private static final String NamePattern = "^[A-Z]{1}[a-z]{2,}$"; // regex pattern is fixed and final (static final)
 	private static final String EmailPattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
+	private static final String PhonenumberPattern ="^([\\+]?91)?[6-9]{1}[0-9]{9}$";
 	Scanner scanner = new Scanner(System.in);
 
 	public void FirstnameValidator() {
@@ -34,6 +35,17 @@ public class UserRegistration {
 			System.out.println("email id sucessfully entered");
 		} else {
 			System.out.println("**Invalid email id**try again**");
+		}
+	}
+	
+	public void PhoneNumberValidator() {
+		System.out.println("Enter the phone Number:");
+		String input = scanner.next();
+		if (input.matches(PhonenumberPattern)) {
+			System.out.println("phone number sucessfully entered");
+		}
+		else {
+			System.out.println("**Invalid phone number**try again**");
 		}
 	}
 }
