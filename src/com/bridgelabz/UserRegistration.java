@@ -6,7 +6,7 @@ public class UserRegistration {
 	private static final String NamePattern = "^[A-Z]{1}[a-z]{2,}$"; // regex pattern is fixed and final (static final)
 	private static final String EmailPattern = "^[0-9a-zA-Z]+([.\\-+]?[a-zA-Z0-9]+)?\\@[0-9a-zA-Z]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,})*$";
 	private static final String PhonenumberPattern = "^\\+?([0-9]{2})\\)?([0-9]{10})$";
-	private static final String PasswordPattern ="^[A-Za-z]{8}$";
+	private static final String PasswordPattern ="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -17,6 +17,7 @@ public class UserRegistration {
 			System.out.println("first name sucessfully entered");
 		} else {
 			System.out.println("**Invalid First name**try again**");
+			FirstnameValidator();
 		}
 	}
 
@@ -27,6 +28,7 @@ public class UserRegistration {
 			System.out.println("Last name sucessfully entered");
 		} else {
 			System.out.println("**Invalid Last name**try again**");
+			 LastnameValidator();
 		}
 	}
 
@@ -37,6 +39,7 @@ public class UserRegistration {
 			System.out.println("email id sucessfully entered");
 		} else {
 			System.out.println("**Invalid email id**try again**");
+			EmailValidator();
 		}
 	}
 
@@ -47,6 +50,7 @@ public class UserRegistration {
 			System.out.println("phone number sucessfully entered");
 		} else {
 			System.out.println("**Invalid phone number**try again**");
+			PhoneNumberValidator();
 		}
 	}
 	public void PasswordValidator() {
@@ -57,6 +61,7 @@ public class UserRegistration {
 		}
 		else {
 			System.out.println("**Invalid password**try again**");
+			PasswordValidator();
 		}
 	}
 }
