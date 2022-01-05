@@ -9,6 +9,7 @@ public class UserRegistration {
 	private static final String PasswordPatternRule1 ="^[A-Za-z]{8}$";
 	private static final String PasswordPatternRule2 ="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}$";
 	private static final String PasswordPatternRule3 = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+	private static final String PasswordPatternRule4 = "^(?=.*[A-Z0-9a-z])(?=.*[!@#$%^&*();]{1}).{8,}$";
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -88,6 +89,17 @@ public class UserRegistration {
 		else {
 			System.out.println("**Invalid password**try again**");
 			PasswordValidatorRule3();
+		}
+	}
+	public void PasswordValidatorRule4() {
+		System.out.println("Enter the password:");
+		String input = scanner.next();
+		if (input.matches(PasswordPatternRule4)) {
+			System.out.println("password sucessfully entered");
+		}
+		else {
+			System.out.println("**Invalid password**try again**");
+			PasswordValidatorRule4();
 		}
 	}
 }
